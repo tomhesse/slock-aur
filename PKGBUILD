@@ -1,7 +1,7 @@
 pkgname=slock-custom
 _pkgname=slock
 pkgver=1.4
-pkgrel=1
+pkgrel=2
 pkgdesc="A simple X display locker"
 url="https://tools.suckless.org/slock"
 arch=('i686' 'x86_64')
@@ -11,9 +11,11 @@ depends=('libxft' 'libxext' 'libxrandr')
 provides=('slock')
 conflicts=('slock')
 source=(https://dl.suckless.org/tools/slock-$pkgver.tar.gz
+        https://tools.suckless.org/slock/patches/dpms/slock-dpms-1.4.diff
         config.h)
 sha256sums=('b53849dbc60109a987d7a49b8da197305c29307fd74c12dc18af0d3044392e6a'
-            'f4c746c86d8933f187a6ca64c83b30c9b948f5d6f84139511dcf6f7d7322b0a6')
+            '12af3ae1522d2423fb55d462896e1392797fd4073006a30a99d1b679535dbadf'
+            '937e48cb800100a896ffcf1bdca966ecb50df7d1ab0098265a7bf1f94cb8bca3')
 
 prepare() {
   cd "$srcdir/$_pkgname-$pkgver"
